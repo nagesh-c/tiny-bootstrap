@@ -8,7 +8,7 @@
 	bits 16
 
 	mov ax, 07C0h
-	mov ds, ax
+	mov ds, ax		; data segment begin address
 	mov ax, 07E0h		; 07E0h = (07C00h+200h)/10h, beginning of stack segment.
 	mov ss, ax
 	mov sp, 2000h		; 8k of stack space.
@@ -81,7 +81,7 @@ print:
 	ret
 
 
-msg:	db "Oh boy do I sure love assembly!", 0
+msg:	db "hello!! Nagesh. How are you?", 0
 
 	times 510-($-$$) db 0
 	dw 0xAA55
